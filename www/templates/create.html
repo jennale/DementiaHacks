@@ -1,0 +1,40 @@
+<ion-view view-title="Create an account">
+	<ion-content>
+		<form ng-submit="create();">
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">First Name</span>
+					<input type="text" placeholder="Jane" ng-model="createData.first_name">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Last Name</span>
+					<input type="text" placeholder="Doe" ng-model="createData.last_name">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Email Address</span>
+					<input type="text" placeholder="email@address.com" ng-model="createData.email">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Phone number (Optional)</span>
+					<input type="text" placeholder="111-111-1111" ng-model="createData.phone">
+				</label>
+			</div>
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Username</span>
+					<input type="text" placeholder="Username" ng-model="createData.username">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Password</span>
+					<input type="password" placeholder="Password" ng-model="createData.password">
+				</label>
+				<label class="item">
+					<button class="button button-block button-positive" type="submit">Create your account</button>
+				</label>
+			</div>
+		</form>
+	<div class="errors" >
+		{{errors}}
+	</div>
+	</ion-content>
+</ion-view>
