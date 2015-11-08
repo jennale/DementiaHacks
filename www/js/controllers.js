@@ -76,9 +76,7 @@ angular.module('starter.controllers', [])
 	var user = $rootScope.user;
 	$scope.patients = {};
 	$scope.convertTime = function(time){
-		var c = new Date();
-		c.setTime(time);
-		return c;
+		return moment.unix(time).format("MMM Do YY, h:mm a");
 	};
 	$scope.go = function (id, path) {
 		window.localStorage['patientId'] = id;
