@@ -13,16 +13,20 @@ angular.module('starter.services', [])
 	};
 
 	function setToken(token) {
-		console.log("token:"+token);
 		window.localStorage.setItem(TOKEN_KEY, token);
 		userToken = token;
 	}
 
 	function useCredentials(data) {
 		user = data;
+		window.localStorage['userInfo'] = JSON.stringify(data);
 		window.localStorage.setItem('UserID', data.caregiver.id);
 	    $http.defaults.headers.common['X-Auth-Token'] = getToken();
 	}
+
+	getCredentials = function() {
+		return JSON.parse(window.localStorage['userInfo'] || false);
+	};
 
 	function destroyCredentials() {
 		user.token = undefined;
@@ -52,6 +56,7 @@ angular.module('starter.services', [])
 		});
 	};
 	return {
+		getUserInfo: getCredentials,
 		getUser: function(){
 			return user;
 		},

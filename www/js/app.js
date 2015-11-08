@@ -32,6 +32,60 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'AppCtrl'
   })
 
+   .state('tab', {
+    url: '/tab',
+    abstract: true,
+    templateUrl: 'templates/tabs.html',
+    controller: 'AppCtrl'
+  })
+   
+  .state('tab.home', {
+      url: '/home',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/tab-home.html',
+          // controller: 'SelectionsController'
+        }
+      }
+    })
+  .state('tab.plan', {
+      url: '/plan',
+      views: {
+        'tab-careplan': {
+          templateUrl: 'templates/tab-careplan.html',
+          // controller: 'SelectionsController'
+        }
+      }
+    })
+  .state('tab.reminders', {
+      url: '/reminders',
+      views: {
+        'tab-reminders': {
+          templateUrl: 'templates/tab-reminders.html',
+          // controller: 'SelectionsController'
+        }
+      }
+    })
+  .state('tab.calendar', {
+      url: '/calendar',
+      views: {
+        'tab-calendar': {
+          templateUrl: 'templates/tab-calendar.html',
+          // controller: 'SelectionsController'
+        }
+      }
+    })
+  .state('tab.other', {
+      url: '/other',
+      views: {
+        'tab-other': {
+          templateUrl: 'templates/tab-other.html',
+          // controller: 'SelectionsController'
+        }
+      }
+    })
+
+
   .state('app.login', {
       url: '/login',
       views: {
@@ -53,11 +107,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
    })
 
   .state('app.patients', {
-      url: ':userid/patients',
+      url: '/patients',
       views: {
         'menuContent': {
           templateUrl: 'templates/patients.html',
           controller: 'SelectionsController'
+        }
+      }
+    })
+  .state('app.patients-create', {
+      url: '/patients/create',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/createPatient.html',
+          controller: 'PatientCreationController'
         }
       }
     })

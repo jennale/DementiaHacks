@@ -66,7 +66,8 @@ angular.module('starter.controllers', [])
 				title: data.message
 			});
 		 }
-		});};
+		});
+	};
 })
 
 .controller('SelectionsController', function($scope, $stateParams, $rootScope, $http, $ionicModal, $timeout,AuthenticationService) {
@@ -74,7 +75,42 @@ angular.module('starter.controllers', [])
 	$http.get(POST_URL+'/caregivers/'+ AuthenticationService.getUserID() +'?access_token='+ AuthenticationService.getToken()).success(function(data){
 		console.log(data.patients);
 	});
-});
+})
 
+.controller('PatientCreationController', function($scope,$ionicPopup, $stateParams, $rootScope, $http, $ionicModal, $timeout,AuthenticationService) {
+	var user = $rootScope.user;
+	// $http.get(POST_URL+'/patients/'+ AuthenticationService.getUserID() +'?access_token='+ AuthenticationService.getToken()).success(function(data){
+	// 	console.log(data.patients);
+	// });
+	// Form data for the login modal
+	$scope.createData = {};
+	$scope.errors = '';
+	$scope.success = '';
+
+	$scope.create = function() {
+		$http({
+		  method  : 'POST',
+		  url     : POST_URL+'/patients'+'?access_token='+ AuthenticationService.getToken(),
+		  data    : $.param($scope.createData),  // pass in data as strings
+		  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+		 })
+		.success(function(data) {
+			console.log(data);
+		 if (data.status==='success') {
+			$ionicPopup.alert({
+				title: data.message,
+				template: "Profile has successfully been created!"
+			}).then(function(){
+					$ionicHistory.goBack();
+				});
+		 } else {
+		 	$scope.errors = data.errors;
+			$ionicPopup.alert({
+				title: data.message
+			});
+		 }
+		});
+	};
+});
 
 

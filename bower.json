@@ -4,6 +4,7 @@
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.1.1",
     "fullcalendar": "~2.4.0",
-    "ion-drawer-vertical": "~1.6.0"
+    "ion-drawer-vertical": "~1.6.0",
+    "ng-cordova": "~0.0.3"
   }
 }

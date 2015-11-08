@@ -1,0 +1,63 @@
+<ion-view view-title="Who are you caring for?">
+	<ion-content>
+		<img src="http://placehold.it/150x150">
+		<form ng-submit="create();">
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">First Name</span>
+					<input type="text" placeholder="Jane" ng-model="createData.first_name">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Last Name</span>
+					<input type="text" placeholder="Doe" ng-model="createData.last_name">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Nickname</span>
+					<input type="text" placeholder="Doe" ng-model="createData.nick_name">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Email Address</span>
+					<input type="text" placeholder="email@address.com" ng-model="createData.email">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Address</span>
+					<input type="text" placeholder="123 First St" ng-model="createData.address">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Phone number (Optional)</span>
+					<input type="text" placeholder="111-111-1111" ng-model="createData.phone">
+				</label>
+			</div>
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Date of Birth</span>
+					<input type="text" placeholder="" ng-model="createData.dob">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Blood Type</span>
+					<input type="text" placeholder="A, AB, O" ng-model="createData.blood_type">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Medical Conditions</span>
+					<textarea rows="8" type="textarea" placeholder="Medical Conditions" ng-model="createData.medical_conditions"></textarea>
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Allergies</span>
+					<textarea rows="8" type="textarea" placeholder="Allergies" ng-model="createData.allerges"></textarea>
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Religion</span>
+					<input type="textarea" placeholder="Religion" ng-model="createData.religion">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Picture</span>
+					ADD IMAGE UPLOAD HERE..l8r
+					<input type="hidden" ng-model="createData.picture">
+				</label>
+				<label class="item">
+					<button class="button button-block button-positive" type="submit">Create profile</button>
+				</label>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>
