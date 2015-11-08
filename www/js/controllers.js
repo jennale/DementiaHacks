@@ -145,11 +145,11 @@ angular.module('starter.controllers', [])
 		    events: [
 		        {
 		            title: 'Event1',
-		            start: '2015-11-07'
+		            start: '2015-11-08'
 		        },
 		        {
 		            title: 'Event2',
-		            start: '2015-11-07'
+		            start: '2015-11-08'
 		        }
 		        // etc...
 		    ],
@@ -160,11 +160,11 @@ angular.module('starter.controllers', [])
 		    events: [
 		        {
 		            title: 'Event1',
-		            start: '2015-11-07'
+		            start: '2015-11-08'
 		        },
 		        {
 		            title: 'Event2',
-		            start: '2015-11-07'
+		            start: '2015-11-08'
 		        }
 		        // etc...
 		    ],
@@ -175,8 +175,9 @@ angular.module('starter.controllers', [])
     $scope.uiConfig = {
       calendar:{
         editable: true,
+        height: 400,
         header:{
-          left: 'month basicWeek basicDay agendaWeek agendaDay',
+          left: 'month agendaWeek agendaDay',
           center: 'title',
           right: 'today prev,next'
         },

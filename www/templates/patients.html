@@ -4,7 +4,7 @@
     <h3>Select a profile</h3>
 	<div class="list card" ng-repeat="patient in patients" ng-click="go(patient.id, '/tab/home')">
 		<div class="item item-avatar">
-			<img src="http://placehold.it/50x50">
+			<img src="img/photo.png">
 			<h2>{{patient.first_name}} {{patient.last_name}} {{patient.nick_name?'('+patient.nick_name+')':''}}</h2>
 			<p>Last updated: {{convertTime(patient.updated_at)}}</p>
 		</div>

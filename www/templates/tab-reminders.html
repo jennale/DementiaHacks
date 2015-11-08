@@ -19,6 +19,7 @@
 	  top: 50%;
 	}
 </style>
+
 <ion-view title="Reminders">
     <ion-content padding="true" class="has-header">
         <form class="list" ng-submit="add()">
@@ -29,20 +30,20 @@
 				<button class="button button-small" type="button" ng-click="add()">Submit</button>
 			</div>
         </form>
-        <button class="button button-stable button-icon button-small icon-left ion-ios-personadd"></button>
-        <button class="button button-stable button-icon button-small icon-left ion-android-calendar"></button>
-        <ion-list></ion-list>
-        <ion-list></ion-list>
+        <button class="button button-stable button-icon icon-left ion-ios-personadd"></button>
+        <button class="button button-stable button-icon icon-left ion-android-calendar"></button>
+        <div class="card task-list">
         <ion-list>
             <ion-checkbox ng-repeat="_task in tasks" ng-click="change(_task.id)" ng-model="_task.done" ng-checked="_task.done == 1">
-					<div class="item item-input-inset">
+					<div class="item item-input-inset task-item">
 						<div class="item-input-wrapper">
 							{{_task.title}}
 						</div>
-						<a href="" class="button button-icon icon ion-trash-a" ng-click="delete(_task.id)"></a>
+						<a href="" class="button button-icon icon ion-ios-close-empty" ng-click="delete(_task.id)"></a>
 						<!-- <button class="button button-small" type="button" ng-click="add()">Submit</button> -->
 					</div>
             </ion-checkbox>
         </ion-list>
+        </div>
     </ion-content>
 </ion-view>
