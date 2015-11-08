@@ -39,6 +39,11 @@ angular.module('starter.controllers', [])
 	};
 })
 
+.controller('CareplanCatCtrl', function($scope, $http,$stateParams, AuthenticationService, $ionicPopup, $ionicLoading, $state, $ionicHistory) {
+	$scope.category = $stateParams.category;
+})
+
+
 .controller('SignUpCtrl', function($scope, $http, AuthenticationService, $ionicPopup, $ionicLoading, $state, $ionicHistory) {
 	// Form data for the login modal
 	$scope.createData = {};
@@ -71,7 +76,7 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller('SelectionsController', function($scope, $stateParams, $location, $rootScope, $http, $ionicModal, $timeout,AuthenticationService) {
+.controller('SelectionsController', function($scope, $stateParams,$ionicLoading, $location, $rootScope, $http, $ionicModal, $timeout,AuthenticationService) {
 	var user = $rootScope.user;
 	$scope.patients = {};
 	$scope.convertTime = function(time){
@@ -82,9 +87,13 @@ angular.module('starter.controllers', [])
 	$scope.go = function ( path ) {
   		$location.path( path );
 	};
+	$ionicLoading.show({
+ 		template: 'Loading...'
+	});
 	$http.get(POST_URL+'/caregivers/'+ AuthenticationService.getUserID() +'?access_token='+ AuthenticationService.getToken() + '&expand=patients')
 	.success(function(result){
 		$scope.patients = result.data.patients;
+		$ionicLoading.hide();
 	});
 })
 

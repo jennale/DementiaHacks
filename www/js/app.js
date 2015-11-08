@@ -1,6 +1,7 @@
 // Ionic Starter App
 var POST_URL = "http://dementiahacks:8888";
 POST_URL = "http://dementiahack-api.mex";
+POST_URL = "http://hbling-api.prosamsonline.com";
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -69,11 +70,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-  .state('tab.category', {
-      url: '/plan/:category',
+  .state('tab.plan-category', {
+      url: '/:category/',
       views: {
         'tab-careplan': {
-          templateUrl: 'templates/tab-careplan.html',
+          templateUrl: 'templates/tab-careplan-category.html',
+          controller: 'CareplanCatCtrl'
+        }
+      }
+    })
+  .state('tab.plan-sub-category', {
+      url: '/:category/:id',
+      views: {
+        'tab-careplan': {
+          templateUrl: 
+          'templates/tab-careplan-subcategory.html',
         }
       }
     })
@@ -104,25 +115,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
 
-  .state('app.login', {
-      url: '/login',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/login.html',
-		    controller: 'LoginCtrl'
-        }
-      }
-   })
+  // .state('app.login', {
+  //     url: '/login',
+  //     views: {
+  //       'menuContent': {
+  //         templateUrl: 'templates/login.html',
+		//     controller: 'LoginCtrl'
+  //       }
+  //     }
+  //  })
 
-  .state('app.create', {
-      url: '/create',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/create.html',
-		    controller: 'SignUpCtrl'
-        }
-      }
-   })
+  // .state('app.create', {
+  //     url: '/create',
+  //     views: {
+  //       'menuContent': {
+  //         templateUrl: 'templates/create.html',
+		//     controller: 'SignUpCtrl'
+  //       }
+  //     }
+  //  })
 
   .state('app.patients', {
       url: '/patients',
