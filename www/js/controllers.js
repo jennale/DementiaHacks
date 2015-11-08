@@ -39,10 +39,6 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller('CareplanCatCtrl', function($scope, $http,$stateParams, AuthenticationService, $ionicPopup, $ionicLoading, $state, $ionicHistory) {
-	$scope.category = $stateParams.category;
-})
-
 
 .controller('SignUpCtrl', function($scope, $http, AuthenticationService, $ionicPopup, $ionicLoading, $state, $ionicHistory) {
 	// Form data for the login modal

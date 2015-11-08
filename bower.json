@@ -5,7 +5,8 @@
     "ionic": "driftyco/ionic-bower#1.1.1",
     "fullcalendar": "~2.3.1",
     "ion-drawer-vertical": "~1.6.0",
-    "ng-cordova": "~0.0.3"
+    "ng-cordova": "~0.0.3",
+    "pusher": "~3.0.0"
   },
   "resolutions": {
     "angular": "1.4.3",

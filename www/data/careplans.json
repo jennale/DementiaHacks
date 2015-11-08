@@ -1,0 +1,69 @@
+[
+	{
+		"type": "Physical",
+		"plans": [
+			{
+				"title": "Hydration",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			},
+			{
+				"title": "Outdoor Activity",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			}]
+	},
+	{
+		"type": "Emotional",
+		"plans": [
+			{
+				"title": "Hydration",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			},
+			{
+				"title": "Outdoor Activity",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			}
+		]
+	},
+	{
+		"type": "Mental",
+		"plans": [
+			{
+				"title": "Hydration",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			},
+			{
+				"title": "Outdoor Activity",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			}
+		]
+	},
+	{
+		"type": "Spiritual",
+		"plans": [
+			{
+				"title": "Hydration",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			},
+			{
+				"title": "Outdoor Activity",
+				"plan":"These are the details of the plan",
+				"rating":"3",
+				"comments":""
+			}
+		]
+	}
+]
