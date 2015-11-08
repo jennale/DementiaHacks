@@ -255,7 +255,7 @@ angular.module('starter.controllers', [])
 		});
 	};
 })
-.controller('NotificationsCtrl', function($scope,$ionicPopup, $stateParams, $rootScope, $http, $ionicModal, $timeout, $ionicHistory, notificationsResp, AuthenticationService) {
+.controller('NotificationsCtrl', function($scope, $interval,$ionicPopup, $stateParams, $rootScope, $http, $ionicModal, $timeout, $ionicHistory, notificationsResp, AuthenticationService) {
 	var user = $rootScope.user;
 	$scope.notifications = notificationsResp.data.data;
 	console.log(notificationsResp);
@@ -264,6 +264,12 @@ angular.module('starter.controllers', [])
 	$scope.icons = {
 		task: 'clipboard',
 		calendar: 'clock'
+	}
+
+	$scope.doRefresh = function(){
+		$interval(function(){
+ 			$scope.$broadcast('scroll.refreshComplete');
+		},2000);
 	}
 
 	$scope.task = {

@@ -1,5 +1,9 @@
 <ion-view title="Home">
     <ion-content padding="true" class="has-header">
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
         <form class="list">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
