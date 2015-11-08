@@ -1,15 +1,37 @@
-<ion-view title="Care Plan">
-    <ion-content padding="true" class="has-header">
-        <form class="list">
-            <label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="What are you looking for?">
-            </label>
-        </form>
-        <button class="button button-stable button-small icon ion-android-add"> Add New</button>
-        <button class="button button-stable button-block button-large">Physical</button>
-        <button class="button button-stable button-block button-large">Emotional</button>
-        <button class="button button-stable button-block button-large">Mental</button>
-        <button class="button button-stable button-block button-large">Spiritual</button>
-    </ion-content>
-</ion-view>
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Edit Plan Details</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Plan</span>
+          <input type="text" ng-model="plan.title">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Description</span>
+          <input type="text" ng-model="plan.plan">
+        </label>
+       <label class="item item-input">
+          <span class="input-label">Rating (out of 5)</span>
+          <input type="text" ng-model="plan.rating">
+        </label>
+       <label class="item item-input">
+          <span class="input-label">Comments</span>
+          <input type="text" ng-model="plan.comments" placeholder="No comments">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+<!--        "title": "Go on daily walk",
+            "plan":"Go for 15 minute walk around neighborhood park",
+            "rating":"2",
+            "comments":"" -->

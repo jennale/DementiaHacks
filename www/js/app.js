@@ -71,20 +71,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.more-control
       }
     })
   .state('tab.plan-category', {
-      url: '/:category/',
+      url: '/plan/:category/',
       views: {
         'tab-careplan': {
           templateUrl: 'templates/tab-careplan-category.html',
           controller: 'CareplanCatCtrl'
-        }
-      }
-    })
-  .state('tab.plan-sub-category', {
-      url: '/:category/:id',
-      views: {
-        'tab-careplan': {
-          templateUrl: 
-          'templates/tab-careplan-subcategory.html',
         }
       }
     })

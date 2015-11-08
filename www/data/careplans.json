@@ -1,69 +1,47 @@
-[
-	{
-		"type": "Physical",
-		"plans": [
-			{
-				"title": "Hydration",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			},
-			{
-				"title": "Outdoor Activity",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			}]
-	},
-	{
-		"type": "Emotional",
-		"plans": [
-			{
-				"title": "Hydration",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			},
-			{
-				"title": "Outdoor Activity",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			}
-		]
-	},
-	{
-		"type": "Mental",
-		"plans": [
-			{
-				"title": "Hydration",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			},
-			{
-				"title": "Outdoor Activity",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			}
-		]
-	},
-	{
-		"type": "Spiritual",
-		"plans": [
-			{
-				"title": "Hydration",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			},
-			{
-				"title": "Outdoor Activity",
-				"plan":"These are the details of the plan",
-				"rating":"3",
-				"comments":""
-			}
-		]
-	}
-]
+{
+    "Physical": {
+        "plans": [
+            {
+            "title": "Go on daily walk",
+            "plan":"Go for 15 minute walk around neighborhood park",
+            "rating":"2",
+            "comments":""
+            },
+            {
+                "title": "Outdoor Activity",
+                "plan":"These are the details of the plan",
+                "rating":"3",
+                "comments":""
+            }]
+    },
+    "Emotional": {
+        "plans": [
+            {
+            "title": "Maintain family memories",
+            "plan":"Look over photo album for 15 minutes",
+            "rating":"3",
+            "comments":"Contact for Sarah to find out where photo albums are stored"
+            }
+        ]
+    },
+    "Mental": {
+        "plans": [
+            {
+            "title": "Exercise memory",
+            "plan":"Play iPad memory games for 30 minutes",
+            "rating":"4",
+            "comments":"Use Greymind, Lumosity "
+            }
+        ]
+    },
+    "Spiritual": {
+        "plans": [
+            {
+                "title": "Maintain ties with Church communtiy",
+                "plan":"Go to Sunday mass",
+                "rating":"3",
+                "comments":"Find somone to drive grammie to Sunday Mass"
+            }
+        ]
+    }
+}
