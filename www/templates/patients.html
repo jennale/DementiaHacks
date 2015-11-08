@@ -2,7 +2,7 @@
 <ion-view view-title="Select" hide-back-button="true" >
   <ion-content class="padding">
     <h3>Select a profile</h3>
-	<div class="list card" ng-repeat="patient in patients" ng-click="go('/tab/home')">
+	<div class="list card" ng-repeat="patient in patients" ng-click="go(patient.id, '/tab/home')">
 		<div class="item item-avatar">
 			<img src="http://placehold.it/50x50">
 			<h2>{{patient.first_name}} {{patient.last_name}} {{patient.nick_name?'('+patient.nick_name+')':''}}</h2>

@@ -1,9 +1,48 @@
-<ion-view view-title="Reminders">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Reminders
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+<style type="text/css">
+	.item.item-checkbox .item-content .item-input-wrapper {
+	  font-size: 1.2em;
+	  background: none;
+	}
+
+	.item.item-checkbox[checked=checked] .item-content .item-input-wrapper {
+	  position: relative;
+	}
+	.item.item-checkbox[checked=checked] .item-content .item-input-wrapper::after {
+	  border-bottom: 0.125em solid black;
+	  /*border-bottom: 0.125em solid rgba(255, 0, 0, 0.5);*/
+	  content: "";
+	  left: 0;
+	  line-height: 1em;
+	  margin-top: calc(0.125em / 2 * -1);
+	  position: absolute;
+	  right: 0;
+	  top: 50%;
+	}
+</style>
+<ion-view title="Reminders">
+    <ion-content padding="true" class="has-header">
+        <form class="list" ng-submit="add()">
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" ng-model="task.title" placeholder="+ Add Reminder">
+				</label>
+				<button class="button button-small" type="button" ng-click="add()">Submit</button>
+			</div>
+        </form>
+        <button class="button button-stable button-icon button-small icon-left ion-ios-personadd"></button>
+        <button class="button button-stable button-icon button-small icon-left ion-android-calendar"></button>
+        <ion-list></ion-list>
+        <ion-list></ion-list>
+        <ion-list>
+            <ion-checkbox ng-repeat="_task in tasks" ng-click="change(_task.id)" ng-model="_task.done" ng-checked="_task.done == 1">
+					<div class="item item-input-inset">
+						<div class="item-input-wrapper">
+							{{_task.title}}
+						</div>
+						<a href="" class="button button-icon icon ion-trash-a" ng-click="delete(_task.id)"></a>
+						<!-- <button class="button button-small" type="button" ng-click="add()">Submit</button> -->
+					</div>
+            </ion-checkbox>
+        </ion-list>
+    </ion-content>
 </ion-view>

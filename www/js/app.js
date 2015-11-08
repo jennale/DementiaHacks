@@ -1,7 +1,7 @@
 // Ionic Starter App
 var POST_URL = "http://dementiahacks:8888";
 POST_URL = "http://dementiahack-api.mex";
-POST_URL = "http://hbling-api.prosamsonline.com";
+// POST_URL = "http://hbling-api.prosamsonline.com";
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -93,6 +93,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       views: {
         'tab-reminders': {
           templateUrl: 'templates/tab-reminders.html',
+          controller: 'TaskCtrl',
+          resolve: {
+              tasksResp: function($http, AuthenticationService) {
+                return $http({
+                  method  : 'GET',
+                  url     : POST_URL+'/tasks'+'?sort=-created_at&access_token='+ AuthenticationService.getToken(),
+                  data    : $.param({}),  // pass in data as strings
+                  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                 });
+              }
+          },
         }
       }
     })

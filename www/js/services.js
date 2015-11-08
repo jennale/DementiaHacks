@@ -87,8 +87,10 @@ angular.module('starter.services', [])
 
 			self.channels['presence-connected'].bind('pusher:subscription_error', function(status) {
 			  // status is http-status-code
+			  console.log('presence: subscription error');
 			});
 			self.channels['presence-connected'].bind('pusher:subscription_succeeded', function(members) {
+				console.log('presence: subscription succeeded');
 			});
 			self.channels['presence-connected'].bind('pusher:member_added', function(member) {
 			});

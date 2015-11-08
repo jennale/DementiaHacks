@@ -84,8 +84,9 @@ angular.module('starter.controllers', [])
 		c.setTime(time);
 		return c;
 	};
-	$scope.go = function ( path ) {
-  		$location.path( path );
+	$scope.go = function (id, path) {
+		window.localStorage['patientId'] = id;
+		$location.path( path );
 	};
 	$ionicLoading.show({
  		template: 'Loading...'
@@ -189,6 +190,75 @@ angular.module('starter.controllers', [])
       }
     };
 
+})
+.controller('TaskCtrl', function($scope,$ionicPopup, $stateParams, $rootScope, $http, $ionicModal, $timeout, $ionicHistory, tasksResp, AuthenticationService) {
+	var user = $rootScope.user;
+	$scope.tasks = tasksResp.data.data;
+
+	$scope.task = {
+		patient_id: window.localStorage['patientId']
+	};
+
+	$scope.createData = {};
+	$scope.errors = '';
+	$scope.success = '';
+
+	$scope.add = function() {
+		$http({
+		  method  : 'POST',
+		  url     : POST_URL+'/tasks'+'?access_token='+ AuthenticationService.getToken(),
+		  data    : $.param($scope.task),  // pass in data as strings
+		  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+		 })
+		.success(function(data) {
+			if (data.status==='success') {
+				$scope.tasks.unshift(data.data);
+				$scope.task.title = "";
+				// $ionicPopup.alert({
+				// 	title: data.message,
+				// 	template: "Profile has successfully been created!"
+				// }).then(function(){
+				// 		$ionicHistory.goBack();
+				// 	});
+			} else {
+				$scope.errors = data.errors;
+				$ionicPopup.alert({
+					title: data.message
+				});
+			}
+		});
+	};
+
+	$scope.change = function(id) {
+		$scope.tasks.forEach(function(task, i){
+			if(task.id == id) {
+				$http({
+				  method  : 'PUT',
+				  url     : POST_URL+'/tasks/'+ id +'?access_token='+ AuthenticationService.getToken(),
+				  data    : $.param({done: task.done === true ? 1 : 0}),  // pass in data as strings
+				  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+				 })
+				.success(function(data) {
+				});
+			}
+		});
+	};
+
+	$scope.delete = function(id) {
+		$scope.tasks.forEach(function(task, i){
+			if(task.id == id) {
+				$http({
+				  method  : 'DELETE',
+				  url     : POST_URL+'/tasks/'+ id +'?access_token='+ AuthenticationService.getToken(),
+				  data    : $.param({}),  // pass in data as strings
+				  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+				 })
+				.success(function(data) {
+					delete $scope.tasks[i];
+				});
+			}
+		});
+	};
 });
 
 
