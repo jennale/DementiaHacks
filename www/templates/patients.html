@@ -1,5 +1,5 @@
 <button class="button button-icon icon ion-navicon"></button>
-<ion-view view-title="Profiles" hide-back-button="true" >
+<ion-view view-title="Profiles" hide-back-button="true"  cache-view="false">
   <ion-content class="padding">
     <h3>Select a profile</h3>
 	<div class="list card" ng-repeat="patient in patients" ng-click="go(patient.id, '/tab/home')">
