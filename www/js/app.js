@@ -6,7 +6,7 @@ POST_URL = "http://dementiahack-api.mex";
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ui.calendar'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.more-controllers','starter.services', 'ui.calendar'])
 
 .run(function($ionicPlatform, AuthenticationService) {
   $ionicPlatform.ready(function() {
@@ -71,20 +71,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
   .state('tab.plan-category', {
-      url: '/:category/',
+      url: '/plan/:category/',
       views: {
         'tab-careplan': {
           templateUrl: 'templates/tab-careplan-category.html',
           controller: 'CareplanCatCtrl'
-        }
-      }
-    })
-  .state('tab.plan-sub-category', {
-      url: '/:category/:id',
-      views: {
-        'tab-careplan': {
-          templateUrl: 
-          'templates/tab-careplan-subcategory.html',
         }
       }
     })

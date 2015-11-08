@@ -9,10 +9,11 @@
         <a class="button button-stable button-small icon ion-android-add">Add New</a>
     <h1>{{category}}</h1>
     <div class="list">
-      <a class="item item-icon-right" href="#">
+      <a class="item item-icon-right" href="#" ng-repeat="plan in plans" ng-click="openModal({{$index}})">
         <i class="icon ion-chevron-right"></i>
-        <!-- <span class="badge badge-assertive">0</span> -->
-        Hydration
+            <span class="badge ">{{plan.comments?'1':'0'}}</span>
+            <h2>{{plan.title}}</h2>
+            <p>{{plan.plan}} </p>
       </a>
     </div>
     </ion-content>
