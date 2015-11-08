@@ -46,9 +46,10 @@ angular.module('starter.controllers', [])
 	$scope.success = '';
 
 	$scope.create = function() {
+		console.log($scope.createData);
 		$http({
 		  method  : 'POST',
-		  url     : 'POST_URL/caregivers',
+		  url     : POST_URL+'/caregivers',
 		  data    : $.param($scope.createData),  // pass in data as strings
 		  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
 		 })
@@ -70,10 +71,20 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller('SelectionsController', function($scope, $stateParams, $rootScope, $http, $ionicModal, $timeout,AuthenticationService) {
+.controller('SelectionsController', function($scope, $stateParams, $location, $rootScope, $http, $ionicModal, $timeout,AuthenticationService) {
 	var user = $rootScope.user;
-	$http.get(POST_URL+'/caregivers/'+ AuthenticationService.getUserID() +'?access_token='+ AuthenticationService.getToken()).success(function(data){
-		console.log(data.patients);
+	$scope.patients = {};
+	$scope.convertTime = function(time){
+		var c = new Date();
+		c.setTime(time);
+		return c;
+	};
+	$scope.go = function ( path ) {
+  		$location.path( path );
+	};
+	$http.get(POST_URL+'/caregivers/'+ AuthenticationService.getUserID() +'?access_token='+ AuthenticationService.getToken() + '&expand=patients')
+	.success(function(result){
+		$scope.patients = result.data.patients;
 	});
 })
 

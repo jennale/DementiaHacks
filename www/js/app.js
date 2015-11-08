@@ -38,6 +38,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: 'templates/tabs.html',
     controller: 'AppCtrl'
   })
+  .state('login',{
+    url:'/login',
+    templateUrl: 'templates/login.html',
+    controller:'LoginCtrl'
+  })
+  .state('create',{
+    url:'/create',
+    templateUrl: 'templates/create.html',
+    controller:"SignUpCtrl"
+  })
    
   .state('tab.home', {
       url: '/home',
@@ -53,7 +63,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-careplan': {
           templateUrl: 'templates/tab-careplan.html',
-          // controller: 'SelectionsController'
+        }
+      }
+    })
+  .state('tab.category', {
+      url: '/plan/:category',
+      views: {
+        'tab-careplan': {
+          templateUrl: 'templates/tab-careplan.html',
         }
       }
     })
@@ -62,7 +79,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-reminders': {
           templateUrl: 'templates/tab-reminders.html',
-          // controller: 'SelectionsController'
         }
       }
     })
@@ -71,7 +87,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-calendar': {
           templateUrl: 'templates/tab-calendar.html',
-          // controller: 'SelectionsController'
         }
       }
     })
@@ -80,7 +95,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-other': {
           templateUrl: 'templates/tab-other.html',
-          // controller: 'SelectionsController'
         }
       }
     })
@@ -144,5 +158,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('app/login');
+  $urlRouterProvider.otherwise('/login');
 });

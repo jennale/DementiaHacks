@@ -1,8 +1,41 @@
-<ion-view view-title="Dashboard">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends"> Home
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+<ion-view title="Home">
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="What are you looking for?">
+            </label>
+        </form>
+	<div class="list card">
+
+		<div class="item item-icon-left">
+			<i class="icon ion-clipboard"></i>
+			<h2>Category of care plan</h2>
+			<p>Update in specific</p>
+			</div>
+
+			<div class="item item-body">
+			<p>
+			  This is a notification that a change in care plan has occured. Make sure you mark this as read.
+			</p>
+
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" href="#">
+			  <i class="icon ion-thumbsup"></i>
+			  Mark as read
+			</a>
+		</div>
+		</div>
+		<div class="list card">
+
+		<div class="item item-icon-left">
+			<i class="icon ion-clock"></i>
+			<h2>Do something at some time</h2>
+			<p>This is a reminder</p>
+			</div>
+		</div>
+		</div>
+    </ion-content>
 </ion-view>

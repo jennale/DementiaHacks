@@ -1,3 +1,6 @@
+<ion-header-bar class="bar-stable">
+	<h1 class="title">Sign up</h1>
+</ion-header-bar>
 <ion-view view-title="Create an account">
 	<ion-content>
 		<form ng-submit="create();">
@@ -23,9 +26,11 @@
 					<input type="password" placeholder="Password" ng-model="createData.password">
 				</label>
 			</div>
+			<div class="list">
+				<label class="item">
+					<button class="button button-block button-positive" type="submit">Create your account</button>
+				</label>
+			</div>
 		</form>
-	<div class="errors" >
-		{{errors}}
-	</div>
 	</ion-content>
 </ion-view>

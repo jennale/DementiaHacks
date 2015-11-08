@@ -1,7 +1,14 @@
 <button class="button button-icon icon ion-navicon"></button>
 <ion-view view-title="Select" hide-back-button="true" >
-  <ion-content>
-    <h1>Select</h1>
+  <ion-content class="padding">
+    <h3>Select a profile</h3>
+	<div class="list card" ng-repeat="patient in patients" ng-click="go('/tab/home')">
+		<div class="item item-avatar">
+			<img src="http://placehold.it/50x50">
+			<h2>{{patient.first_name}} {{patient.last_name}} {{patient.nick_name?'('+patient.nick_name+')':''}}</h2>
+			<p>Last updated: {{convertTime(patient.updated_at)}}</p>
+		</div>
+	</div>
     <button class="button button-block button-positive" ui-sref="app.patients-create">Create another patient</button>
   </ion-content>
 </ion-view>

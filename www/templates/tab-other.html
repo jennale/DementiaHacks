@@ -1,8 +1,13 @@
-<ion-view view-title="Details">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+<ion-view title="Care Plan">
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="What are you looking for?">
+            </label>
+        </form>
+        <button class="button button-stable button-block button-large">Medications</button>
+        <button class="button button-stable button-block button-large">Details</button>
+        <button class="button button-stable button-block button-large">Support</button>
+    </ion-content>
 </ion-view>
