@@ -52,7 +52,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.more-control
     templateUrl: 'templates/create.html',
     controller:"SignUpCtrl"
   })
-   
   .state('tab.home', {
       url: '/home',
       views: {
@@ -62,6 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.more-control
         }
       }
     })
+
   .state('tab.plan', {
       url: '/plan',
       views: {
@@ -112,6 +112,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.more-control
       views: {
         'tab-other': {
           templateUrl: 'templates/tab-other.html',
+        }
+      }
+    })
+  .state('tab.other-med', {
+      url: '/other/meds',
+      views: {
+        'tab-other': {
+          templateUrl: 'templates/tab-other-med.html',
+          controller: 'MedicationsCtrl'
         }
       }
     })

@@ -1,4 +1,4 @@
-<ion-view title="Other">
+<ion-view title="More Details">
     <ion-content padding="true" class="has-header">
         <form class="list">
             <label class="item item-input">
@@ -6,7 +6,13 @@
                 <input type="search" placeholder="What are you looking for?">
             </label>
         </form>
-        <button class="button button-stable button-block button-large">Medications</button>
+        <div class="row ">
+        	<h3 class="profile-name center">Beyonce Knowles</h3>
+        </div>
+        <div class="row">
+        	<img class="profile-photo center" ng-src="http://placehold.it/150X150"/>
+        </div>
+        <button class="button button-stable button-block button-large" ui-sref="tab.other-med">Medications</button>
         <button class="button button-stable button-block button-large">Details</button>
         <button class="button button-stable button-block button-large">Support</button>
     </ion-content>

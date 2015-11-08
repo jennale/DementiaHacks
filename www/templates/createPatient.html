@@ -1,6 +1,8 @@
 <ion-view view-title="Who are you caring for?">
 	<ion-content>
-		<img src="http://placehold.it/150x150">
+	<div class="row">
+		<img class="center profile-photo create-profile" src="img/photo.png" >
+	</div>
 		<form ng-submit="create();">
 			<div class="list">
 				<label class="item item-input item-stacked-label">
@@ -51,7 +53,6 @@
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Picture</span>
-					ADD IMAGE UPLOAD HERE..l8r
 					<input type="hidden" ng-model="createData.picture">
 				</label>
 				<label class="item">

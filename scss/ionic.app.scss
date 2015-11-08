@@ -22,3 +22,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 @import "base/typography";
 @import "base/variables";
+@import "base/helpers";
+
+.center {
+	margin: 0 auto;
+}
