@@ -97,7 +97,7 @@ angular.module('starter.controllers', [])
 	});
 })
 
-.controller('PatientCreationController', function($scope,$ionicPopup, $stateParams, $rootScope, $http, $ionicModal, $timeout,AuthenticationService) {
+.controller('PatientCreationController', function($scope,$ionicPopup, $stateParams, $rootScope, $http, $ionicModal, $timeout, $ionicHistory, AuthenticationService) {
 	var user = $rootScope.user;
 	// $http.get(POST_URL+'/patients/'+ AuthenticationService.getUserID() +'?access_token='+ AuthenticationService.getToken()).success(function(data){
 	// 	console.log(data.patients);

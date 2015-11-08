@@ -99,6 +99,9 @@ angular.module('starter.services', [])
 			});
 			self.channels['private-notifications'].bind('pusher:subscription_succeeded', function() {
 			});
+			self.channels['private-notifications'].bind('new:notification', function(data) {
+				console.log('data received from server: ', data);
+			});
 		});
 		pusher.connection.bind('unavailable', function() {
 			console.log('unavailable');
