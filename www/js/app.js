@@ -1,10 +1,11 @@
 // Ionic Starter App
 var POST_URL = "http://dementiahacks:8888";
+POST_URL = "http://dementiahack-api.mex";
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ui.calendar'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -71,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-calendar': {
           templateUrl: 'templates/tab-calendar.html',
-          // controller: 'SelectionsController'
+          controller: 'CalendarController'
         }
       }
     })
@@ -116,23 +117,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
   .state('app.patients-create', {
-      url: '/patients/create',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/createPatient.html',
-          controller: 'PatientCreationController'
-        }
+    url: '/patients/create',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/createPatient.html',
+        controller: 'PatientCreationController'
       }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
+    }
+  })
+  .state('app.playlists', {
+    url: '/playlists',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/playlists.html',
+        controller: 'PlaylistsCtrl'
       }
-    })
+    }
+  })
 
   .state('app.single', {
     url: '/playlists/:playlistId',

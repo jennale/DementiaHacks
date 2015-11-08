@@ -1,9 +1,5 @@
 <ion-view view-title="Calendar">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+	<div ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div>
   </ion-content>
 </ion-view>
