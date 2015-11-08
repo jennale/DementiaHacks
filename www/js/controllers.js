@@ -122,6 +122,64 @@ angular.module('starter.controllers', [])
 		 }
 		});
 	};
+})
+
+.controller('CalendarController', function($scope, $stateParams, $rootScope, $timeout, AuthenticationService) {
+	var user = $rootScope.user;
+	// $http.get(POST_URL+'/patients/'+ AuthenticationService.getUserID() +'?access_token='+ AuthenticationService.getToken()).success(function(data){
+	// 	console.log(data.patients);
+	// });
+	// Form data for the login modal
+	$scope.createData = {};
+	$scope.errors = '';
+	$scope.success = '';
+
+	$scope.eventSources = [
+		{
+		    events: [
+		        {
+		            title: 'Event1',
+		            start: '2015-11-07'
+		        },
+		        {
+		            title: 'Event2',
+		            start: '2015-11-07'
+		        }
+		        // etc...
+		    ],
+		    color: 'yellow',   // an option!
+		    textColor: 'black' // an option!
+		},
+		{
+		    events: [
+		        {
+		            title: 'Event1',
+		            start: '2015-11-07'
+		        },
+		        {
+		            title: 'Event2',
+		            start: '2015-11-07'
+		        }
+		        // etc...
+		    ],
+		    color: 'blue',   // an option!
+		    textColor: 'black' // an option!
+		}
+	];
+    $scope.uiConfig = {
+      calendar:{
+        editable: true,
+        header:{
+          left: 'month basicWeek basicDay agendaWeek agendaDay',
+          center: 'title',
+          right: 'today prev,next'
+        },
+        dayClick: $scope.alertEventOnClick,
+        eventDrop: $scope.alertOnDrop,
+        eventResize: $scope.alertOnResize
+      }
+    };
+
 });
 
 
