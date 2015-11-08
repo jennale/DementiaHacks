@@ -6,36 +6,25 @@
                 <input type="search" placeholder="What are you looking for?">
             </label>
         </form>
-	<div class="list card">
+        <div ng-repeat="notification in notifications" class="list card">
 
-		<div class="item item-icon-left">
-			<i class="icon ion-clipboard"></i>
-			<h2>Category of care plan</h2>
-			<p>Update in specific</p>
+			<div class="item item-icon-left">
+				<i class="icon ion-clipboard"></i>
+				<h2>{{notification.title}}</h2>
+				<p>New task created</p>
 			</div>
 
-			<div class="item item-body">
-			<p>
-			  This is a notification that a change in care plan has occured. Make sure you mark this as read.
-			</p>
+			<div class="item item-body" ng-hide="notification.description == null || notification.description == ''">
+				<p>{{notification.description}}</p>
 
 			</div>
 
-			<div class="item tabs tabs-secondary tabs-icon-left">
-			<a class="tab-item" href="#">
-			  <i class="icon ion-thumbsup"></i>
-			  Mark as read
-			</a>
-		</div>
-		</div>
-		<div class="list card">
-
-		<div class="item item-icon-left">
-			<i class="icon ion-clock"></i>
-			<h2>Do something at some time</h2>
-			<p>This is a reminder</p>
+			<div class="item tabs tabs-secondary tabs-icon-left" ng-hide="notification.description == null || notification.description == ''">
+				<a class="tab-item" href="#">
+				  <i class="icon ion-thumbsup"></i>
+				  Mark as read
+				</a>
 			</div>
-		</div>
 		</div>
     </ion-content>
 </ion-view>

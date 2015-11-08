@@ -255,6 +255,27 @@ angular.module('starter.controllers', [])
 			}
 		});
 	};
+})
+.controller('NotificationsCtrl', function($scope,$ionicPopup, $stateParams, $rootScope, $http, $ionicModal, $timeout, $ionicHistory, notificationsResp, AuthenticationService) {
+	var user = $rootScope.user;
+	$scope.notifications = notificationsResp.data.data;
+	console.log(notificationsResp);
+	console.log($scope.notifications);
+
+	$scope.icons = {
+		task: 'clipboard',
+		calendar: 'clock'
+	}
+
+	$scope.task = {
+		patient_id: window.localStorage['patientId']
+	};
+
+	$scope.createData = {};
+	$scope.errors = '';
+	$scope.success = '';
+
+
 });
 
 

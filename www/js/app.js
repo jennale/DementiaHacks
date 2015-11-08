@@ -57,7 +57,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.more-control
       views: {
         'tab-home': {
           templateUrl: 'templates/tab-home.html',
-          // controller: 'SelectionsController'
+          controller: 'NotificationsCtrl',
+          resolve: {
+              notificationsResp: function($http, AuthenticationService) {
+                return $http({
+                  method  : 'GET',
+                  url     : POST_URL+'/notifications'+'?sort=-created_at&access_token='+ AuthenticationService.getToken(),
+                  data    : $.param({}),  // pass in data as strings
+                  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                 });
+              }
+          },
         }
       }
     })
