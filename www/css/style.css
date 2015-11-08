@@ -1,4 +1,9 @@
 /* Empty. Add your own CSS if you like */
+body {
+	font-family: "Roboto Slab";
+	font-weight: 300;
+}
+
 .center {
 	margin: 0 auto;
 }
@@ -13,4 +18,70 @@
 	max-width: 150px;
 	max-height: 150px;
 	margin: 20px auto;
+}
+
+.button.button-positive {
+	background-color:#3c9799;
+	border-color: #fff;
+}
+
+.task-item {
+	padding: 0;
+}
+
+.task-list label.item{
+	padding-top:0;
+	padding-bottom: 0;
+	font-family: "Roboto Slab";
+	font-weight: 300;
+}
+.card h2 {
+	font-family: "Roboto Slab";
+	font-weight: 300;
+}
+
+.task-list {
+	margin-top: 0;
+
+}
+.calendar {
+	font-family: "Roboto Slab";
+	font-weight: 300;
+}
+.calendar h2 {
+	font-family: "Roboto Slab";
+	font-weight: 300;
+	padding-top: 15px;
+}
+
+.bar.bar-light, .bar.bar-stable {
+	background-color: #3c9799;
+}
+
+.bar.bar-light .header-item, .bar.bar-stable .title {
+	color: #FFF;
+}
+
+.title h2{
+	color: #205B5C;
+	/*padding-top: 30%;*/
+	margin-bottom: 20px;
+	font-family: "Roboto Slab";
+	font-weight: 300;
+}
+.logo {
+	margin: 30px auto;
+}
+
+.button.button-stable {
+	/*border-color: #3c9799;*/
+	background-color: white;
+	font-family: "Roboto Slab";
+	font-weight: 300;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated,
+.tabs-striped.tabs-light .tab-item.tab-item-active {
+	color: #3c9799;
+    border-color: #3c9799;
 }

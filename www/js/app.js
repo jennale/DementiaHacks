@@ -1,7 +1,7 @@
 // Ionic Starter App
 var POST_URL = "http://dementiahacks:8888";
 POST_URL = "http://dementiahack-api.mex";
-// POST_URL = "http://hbling-api.prosamsonline.com";
+POST_URL = "http://hbling-api.prosamsonline.com";
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -41,6 +41,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.more-control
     abstract: true,
     templateUrl: 'templates/tabs.html',
     controller: 'AppCtrl'
+  })
+ .state('home',{
+    url:'/home',
+    templateUrl: 'templates/home.html'
   })
   .state('login',{
     url:'/login',

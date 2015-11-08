@@ -9094,3 +9094,13 @@ a.button {
 
 .center {
   margin: 0 auto; }
+
+.profile-photo {
+  border-radius: 50%;
+  padding: 20px; }
+
+.create-profile.profile-photo {
+  background-color: lightgrey;
+  max-width: 150px;
+  max-height: 150px;
+  margin: 20px auto; }
